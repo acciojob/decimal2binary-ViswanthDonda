@@ -1,6 +1,29 @@
-function threeSum(arr, target) {
-// write your code here
-  
+function decimalToBinary(decimal) {
+  // Check if the input is a valid positive integer
+  if (!Number.isInteger(decimal) || decimal < 0) {
+    console.log('Input must be a positive integer.');
+    return;
+  }
+
+  // Base case: decimal number is 0
+  if (decimal === 0) {
+    return '0';
+  }
+
+  let binary = '';
+
+  // Convert decimal to binary using repeated division by 2
+  while (decimal > 0) {
+    binary = (decimal % 2) + binary;
+    decimal = Math.floor(decimal / 2);
+  }
+
+  return binary;
 }
 
-module.exports = threeSum;
+// Test case
+let a = prompt();
+const decimal = a.parseInt();
+const binary = decimalToBinary(decimal);
+console.log(binary); // Output: 111
+
